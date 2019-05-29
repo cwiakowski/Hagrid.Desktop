@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:Hagrid"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <ListView DockPanel.Dock="Left">
+            <ComboBox Width="120" Name="ComboBox1"/>
+            <Button Content="Connect" Width="120" Name="Button1" Click="Button1_Click"/>
+        </ListView>
+
+        <DockPanel >
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" Name="TextBox" VerticalAlignment="Stretch" KeyDown="OnKeyDownHandler">
+                </TextBox>
+                <Button Grid.Column="1" Content="Send" Name="Button2" Click="Button2_OnClick" Height="30" DockPanel.Dock="Bottom"/>
+            </Grid>
+            <TextBox TextWrapping="Wrap" Text="" Name="TextBox2" DockPanel.Dock="Top"/>
+        </DockPanel>
+    </DockPanel>
 </Window>
